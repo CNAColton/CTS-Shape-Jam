@@ -47,8 +47,9 @@ public class HazardFiring : MonoBehaviour
             /*****************************\
             |**** Add your code below ****|
             \*****************************/
-
-
+            GameObject hazardClone = Instantiate(hazard, transform.position, transform.rotation);
+            Rigidbody hazardrigidBody = hazardClone.GetComponent<Rigidbody>();
+            hazardrigidBody.velocity = HazardMoveDirection;
             /*****************************\
             |**** Add your code above ****|
             \*****************************/

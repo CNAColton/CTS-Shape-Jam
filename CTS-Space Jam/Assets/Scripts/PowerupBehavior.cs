@@ -16,15 +16,15 @@ public class PowerupBehavior : MonoBehaviour
     }
     void Update()
     {
-        // Null check for gameOver state
-        // after being created in the PowerupController, the Powerup will simply move downwards
+         //Null check for gameOver state
+         //after being created in the PowerupController, the Powerup will simply move downwards
         if (playerController.gameOver)
         {
             return;
         }
         else
         {
-            transform.position = transform.position - new Vector3(0, 0.03f, 0);
+            transform.position = transform.position - new Vector3(0, .01f, 0);
         }
     }
     void OnTriggerEnter(Collider other)
