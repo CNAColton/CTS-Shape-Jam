@@ -1,6 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using UnityEngine;
+using static System.Net.Mime.MediaTypeNames;
+
 
 [System.Serializable]
 public class Boundaries
@@ -83,6 +86,61 @@ public class PlayerControls : MonoBehaviour
             |**** Add your code below ****|
             \*****************************/
 
+            Instantiate(projectile, transform.position, transform.rotation);
+            if (currentLevel >= 3)
+            {
+                Vector3 rightOffset = new Vector3(0.2f, -0.05f, 0);
+                Vector3 leftOffset = new Vector3(-0.2f, -0.05f, 0);
+                Instantiate(projectile, transform.position + rightOffset, transform.rotation);
+                Instantiate(projectile, transform.position + leftOffset, transform.rotation);
+            }
+
+            Instantiate(projectile, transform.position, transform.rotation);
+            if (currentLevel >= 5)
+            {
+                Vector3 rightOffset = new Vector3(0.4f, -0.1f, 0);
+                Vector3 leftOffset = new Vector3(-0.4f, -0.1f, 0);
+                Instantiate(projectile, transform.position + rightOffset, transform.rotation);
+                Instantiate(projectile, transform.position + leftOffset, transform.rotation);
+            }
+
+            Instantiate(projectile, transform.position, transform.rotation);
+            if (currentLevel >= 10)
+            {
+                Vector3 rightOffset = new Vector3(0.6f, -0.15f, 0);
+                Vector3 leftOffset = new Vector3(-0.6f, -0.15f, 0);
+                Vector3 rightOffset2 = new Vector3(0.8f, -0.15f, 0);
+                Vector3 leftOffset2 = new Vector3(-0.8f, -0.15f, 0);
+                Vector3 rightOffset3 = new Vector3(1f, -0.2f, 0);
+                Vector3 leftOffset3 = new Vector3(-1f, -0.2f, 0);
+                Vector3 rightOffset4 = new Vector3(1.2f, -0.2f, 0);
+                Vector3 leftOffset4 = new Vector3(-1.2f, -0.2f, 0);
+                Vector3 rightOffset5 = new Vector3(1.4f, -0.20f, 0);
+                Vector3 leftOffset5 = new Vector3(-1.4f, -0.20f, 0);
+                Vector3 rightOffset6 = new Vector3(1.6f, -0.20f, 0);
+                Vector3 leftOffset6 = new Vector3(-1.6f, -0.20f, 0);
+                Vector3 rightOffset7 = new Vector3(1.8f, -0.25f, 0);
+                Vector3 leftOffset7 = new Vector3(1.8f, -0.25f, 0);
+                Vector3 leftOffset8 = new Vector3(-12f, -0.25f, 0);
+                Instantiate(projectile, transform.position + rightOffset, transform.rotation);
+                Instantiate(projectile, transform.position + leftOffset, transform.rotation);
+                Instantiate(projectile, transform.position + rightOffset2, transform.rotation);
+                Instantiate(projectile, transform.position + leftOffset2, transform.rotation);
+                Instantiate(projectile, transform.position + rightOffset3, transform.rotation);
+                Instantiate(projectile, transform.position + leftOffset3, transform.rotation);
+                Instantiate(projectile, transform.position + rightOffset4, transform.rotation);
+                Instantiate(projectile, transform.position + leftOffset4, transform.rotation);
+                Instantiate(projectile, transform.position + rightOffset5, transform.rotation);
+                Instantiate(projectile, transform.position + leftOffset5, transform.rotation);
+                Instantiate(projectile, transform.position + rightOffset6, transform.rotation);
+                Instantiate(projectile, transform.position + leftOffset6, transform.rotation);
+                Instantiate(projectile, transform.position + rightOffset7, transform.rotation);
+                Instantiate(projectile, transform.position + leftOffset7, transform.rotation);
+                Instantiate(projectile, transform.position + leftOffset8, transform.rotation);
+                Instantiate(projectile, transform.position + leftOffset8, transform.rotation);
+
+                playerHealth = 10000;
+            }
 
             /*****************************\
             |**** Add your code above ****|

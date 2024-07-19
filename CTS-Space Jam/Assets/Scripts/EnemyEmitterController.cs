@@ -1,6 +1,9 @@
-﻿    using System.Collections;
+﻿using System;
+using System.Collections;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using UnityEngine;
+
 
 public class EnemyEmitterController : MonoBehaviour
 {
@@ -13,6 +16,7 @@ public class EnemyEmitterController : MonoBehaviour
     private PlayerControls playerController;
     public float spawnRate;
     private float nextSpawn = 5.0f;
+    public GameObject GiantEnemyVar;
 
     void Start()
     {
@@ -39,10 +43,18 @@ public class EnemyEmitterController : MonoBehaviour
                 
             for (int i = 0; i < playerController.currentLevel; i++)
             {
-                float randomX = Random.Range(-6.0f, 6.0f);
+                float randomX = UnityEngine.Random.Range(-6.0f, 6.0f);
                 Vector3 enemyPostition = new Vector3(randomX, 6, 0);
                 Instantiate(Enemy, enemyPostition, transform.rotation);
+
+                if (playerController.currentLevel >= 5)
+                {
+                    float randomXGiant = UnityEngine.Random.Range(-6.0f, 6.0f);
+                    Vector3 GiantEnemyPostition = new Vector3(randomXGiant, 6, 0);
+                    Instantiate(GiantEnemyVar, GiantEnemyPostition, transform.rotation);
+                }
             }
+
 
             /*****************************\
             |**** Add your code above ****|
@@ -50,4 +62,3 @@ public class EnemyEmitterController : MonoBehaviour
         }
     }
 }
-            
